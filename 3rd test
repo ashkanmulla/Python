@@ -1,0 +1,32 @@
+def stemmer(text):
+    def stem_word(word):
+        # Remove suffixes 'ed', 'ly', 'ing'
+        if word.endswith('ed'):
+            word = word[:-2]
+        elif word.endswith('ly'):
+            word = word[:-2]
+        elif word.endswith('ing'):
+            word = word[:-3]
+
+        # Truncate to 8 letters if longer
+        if len(word) > 8:
+            word = word[:8]
+        
+        return word
+    
+    # Split the text into words
+    words = text.split()
+    
+    # Apply stemming to each word
+    stemmed_words = [stem_word(word) for word in words]
+    
+    # Join the stemmed words back into a string
+    stemmed_text = ' '.join(stemmed_words)
+    
+    return stemmed_text
+
+# Sample Inputs and Outputs
+print(stemmer("a boy is jumping quickly"))  # Output: "a boy is jump quick"
+print(stemmer("the results cannot be extrapolated to other patient group"))  # Output: "the results cannot be extrapol to other patient group"
+
+Explanation:Function stem_word:This function takes a word and removes the suffix if it ends with 'ed', 'ly', or 'ing'.It then truncates the word to 8 letters if it is longer than 8 letters.Function stemmer:This function splits the input text into individual words.It applies the stem_word function to each word.It joins the stemmed words back into a single string.Steps:Suffix Removal: Check if the word ends with 'ed', 'ly', or 'ing' and remove the respective suffix.Truncation: Check if the length of the word after suffix removal is greater than 8 and truncate it to 8 characters if needed.Processing the Input Text: Split the text into words, apply the stemming process to each word, and join the stemmed words back into a sentence.
