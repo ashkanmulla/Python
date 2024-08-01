@@ -1,3 +1,5 @@
+https://link.edgepilot.com/s/f19d8e36/Ri4ACZa6v0GUX8Vmysz1bw?u=https://assessment.predictiveindex.com/bo/u37/CAorUW2022
+
 def calculateScore(text, prefixString, suffixString):
     def longest_suffix_prefix_match(text, prefixString, suffixString):
         # Find longest match for prefix score
